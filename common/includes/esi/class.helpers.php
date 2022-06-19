@@ -1,5 +1,6 @@
 <?php
 
+
 use EDK\ESI\ESI;
 use EsiClient\UniverseApi;
 use EsiClient\SearchApi;

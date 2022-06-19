@@ -55,17 +55,21 @@ class SolarSystem extends Cacheable
         return $this->row['sys_name'];
     }
 
-    function getSecurity($rounded = false)
+    function getSecurity($rounded = false, $null_sec = false)
     {
         $this->execQuery();
         $sec = $this->row['sys_sec'];
 
         if ($rounded)
-        {
-            if ($sec <= 0)
+        {	if ($sec <= 0 && $null_sec) {
+				return number_format($sec, 1);
+			}
+            elseif ($sec <= 0) {
                 return number_format(0.0, 1);
-            else
+			}
+            else {
                 return number_format(round($sec, 1), 1);
+			}
         }
         else return $sec;
     }
@@ -91,6 +95,7 @@ class SolarSystem extends Cacheable
     function getRegionName()
     {
         $this->execQuery();
+	//	echo ($this->row['reg_name']);
         return $this->row['reg_name'];
     }
     

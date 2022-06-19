@@ -186,7 +186,7 @@ class MapView
                     LEFT JOIN kb3_system_jumps sjp ON sjp.sjp_from = sys.sys_id
                     WHERE con.con_id = sys.sys_con_id
                     AND con.con_id = '.$this->conid_;
-            $caption = $this->sysname_." (".roundsec($this->syssec_).")";
+            $caption = $this->sysname_." (".number_format($this->syssec_, 1).")";
         }
         
         if ($this->systemid_ >= 31000001)

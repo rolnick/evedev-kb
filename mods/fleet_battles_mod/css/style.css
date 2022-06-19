@@ -1,0 +1,133 @@
+.kb_table_involved, .kb_table_involved_big
+{
+  font-size: 8.5px;
+  color: #e0e0e0;
+  padding: 0px;
+  border: 1px solid #444444;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.kb_table_involved_big
+{
+  font-size: 10px;
+}
+
+.kb-table-row-kill
+{
+  background: #003000;
+}
+
+.kb-table-row-kill-hover
+{
+  /*color: #012201;*/
+  background: #849DD4;
+  cursor: pointer;
+}
+
+.kb-table-row-loss
+{
+  background: #300000;
+}
+
+.kb-table-row-loss-hover
+{
+  */color: #220101;*/
+  background: #849DD4;
+  cursor: pointer;
+}
+
+.killcount
+{
+  color: #00aa00;
+  float:right;
+  font-weight: bold;
+  font-size:9px;
+  padding-right:4px;
+}
+.losscount
+{
+  color: #dd0000;
+  float:center;
+  font-weight: bold;
+  font-size:9px;
+}
+.efficency
+{
+  color: #ffffff;
+  float:left;
+  font-weight: bold;
+  font-size:9px;
+  padding-right:4px;
+ }
+#pilots_and_ships, #related_kills, #related_losses, #balance_of_power, #friendly_loot, #enemy_loot {
+  display:block;
+}
+
+.br-destroyed
+{
+    background-color: #480000;
+}
+
+.kl-lossIsk { color: #EE0000; }
+.kl-killIsk { color: #00CC00; }
+
+.friendlyParty { background-color: #09277D; }
+.hostileParty { background-color: #9F1010; }
+
+.brFixedNotification { background-image: url("../img/check.png"); background-position: 0 -1px; background-repeat: no-repeat; padding-left: 21px; margin-left: 5px;}
+
+/*; font-weight: bold; text-decoration: underline;
+Gr�n - #00CC00
+Blau - #0066FF
+Lila - #663399
+Pink - #FF6699
+Rot - #990000
+Orange - #FF6600
+Gelb - #FFFF33
+Wei� - #FFFFFF
+Grau - #AAAAAA
+*/
+/* balance of power ship class decorations */
+.bopBattleship { color: #0066FF }
+.bopCapsule { color: #AAAAAA }
+.bopNoobship { color: #AAAAAA }
+.bopFrigate { color: #FFFF33 }
+.bopInterceptor { color: #FFFF33; text-decoration: underline; }
+.bopAssaultFrigate { color: #FFFF33; text-decoration: underline; }
+.bopIndustrial { color: #FF6699 }
+.bopCruiser { color: #990000; }
+.bopHeavyAssault { color: #990000; text-decoration: underline; }
+.bopBattlecruiser { color: #00CC00 }
+.bopShuttle { color: #AAAAAA }
+.bopMiningBarge { color: #FF6699 }
+.bopLogistics { color: #990000; text-decoration: underline; }
+.bopTransport { color: #FF6699; text-decoration: underline; }
+.bopDestroyer { color: #FF6600 }
+.bopCovertOps { color: #FFFF33; text-decoration: underline; }
+.bopDrone { color: #AAAAAA }
+.bopUnknown { color: #AAAAAA }
+.bopDreadnought { color: #663399; font-weight: bold; }
+.bopFreighter { color: #FF6699 }
+.bopCommandShip { color: #00CC00; text-decoration: underline; }
+.bopExhumer { color: #FF6699; text-decoration: underline; }
+.bopInterdictor { color: #FF6600; text-decoration: underline; }
+.bopReconShip { color: #990000; text-decoration: underline; }
+.bopTitan { color: #663399; font-weight: bold; }
+.bopCarrier { color: #663399; font-weight: bold; }
+.bopSupercarrier { color: #663399; font-weight: bold; }
+.bopCapitalIndustrial { color: #FF6699; font-weight: bold; }
+.bopElectronicAttackShip { color: #FFFF33; text-decoration: underline; }
+.bopHeavyInterdictor { color: #990000; text-decoration: underline; }
+.bopBlackOps { color: #0066FF; text-decoration: underline; }
+.bopMarauder { color: #0066FF; text-decoration: underline; }
+.bopJumpFreighter { color: #FF6699; font-weight: bold; text-decoration: underline; }
+.bopPosSmall { color: #FFFFFF }
+.bopPosMedium { color: #FFFFFF }
+.bopPosLarge { color: #FFFFFF }
+.bopPosModules { color: #FFFFFF }
+.bopIndustrialCommand { color: #FF6699; font-weight: bold; }
+.bopStrategicCruiser { color: #990000; text-shadow:darkgrey 1px 1px; }
+.bopInfrastructureModules { color: #FFFFFF; font-weight: bold; }
+.bopTerritoryModules { color: #FFFFFF; font-weight: bold; }
+.bopPrototypeExplorationShip { color: #FF6699 }

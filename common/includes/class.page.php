@@ -131,7 +131,7 @@ class Page
 
         $smarty->assign('kb_title', config::get('cfg_kbtitle').' '.$this->title);
 
-        if ($this->onload) {
+        if (isset($this->onload)) {
             $smarty->assign('on_load', ' onload="'
                     .implode('; ', $this->onload).'"');
         }

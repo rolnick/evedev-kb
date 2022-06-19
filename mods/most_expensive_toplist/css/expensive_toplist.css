@@ -1,0 +1,22 @@
+/* 
+    Document   : expensive_toplist
+    Created on : 03.02.2012, 18:58:27
+    Author     : Evoke. Salvoxia
+    Description: Special classes for the most expensive toptable
+*/
+
+td.kb-table-imgcell-wide
+{
+	height: 32px;
+	padding: 0;
+	vertical-align: middle;
+	width: 68px;
+        min-width: 68px;
+}
+
+.toplist-expensive-value
+{
+    min-width: 60px;
+    width: 60px;
+}
+

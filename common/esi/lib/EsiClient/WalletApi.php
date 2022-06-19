@@ -734,7 +734,7 @@ class WalletApi
         }
 
         // parse inputs
-        $resourcePath = "/v4/corporations/{corporation_id}/wallets/{division}/journal/";
+        $resourcePath = "/v1/corporations/{corporation_id}/wallets/{division}/journal/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -800,7 +800,7 @@ class WalletApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\GetCorporationsCorporationIdWalletsDivisionJournal200Ok[]',
-                '/v4/corporations/{corporation_id}/wallets/{division}/journal/'
+                '/v1/corporations/{corporation_id}/wallets/{division}/journal/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCorporationsCorporationIdWalletsDivisionJournal200Ok[]', $httpHeader), $statusCode, $httpHeader);

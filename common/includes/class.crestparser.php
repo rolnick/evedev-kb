@@ -510,7 +510,7 @@ class CrestParser
                             && !$involvedParty['weaponTypeID']
                             && !$involvedParty['characterID']
                             && !strlen($involvedParty['characterName'])) {
-                    throw new CrestParserException("Error processing involved party. Kill-ID: ".$this->externalID);
+                    throw new CrestParserException("Error processing yolo1 involved party. Kill-ID: ".$this->externalID);
             }
 
             $isNPC = FALSE;

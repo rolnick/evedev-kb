@@ -7,6 +7,7 @@
  */
 use Swagger\Client\ApiException;
 use EDK\ESI\ESI;
+use EsiClient\UniverseApi;
 /*
  * @package EDK
  */
@@ -281,7 +282,11 @@ class pCorpDetail extends pageAssembly
                 EDKError::log(ESI::getApiExceptionReason($e) . PHP_EOL . $e->getTraceAsString());
             }
             // FIXME not provided by ESI!
-            $this->corpDetails['headQuartersName'] = "";
+			$this->corpDetails['homeStationId'] = $EsiCorp->getHomeStationId();
+			$EdkEsi = new ESI();
+			$UniverseApi = new UniverseApi($EdkEsi);
+			$UniverseDetails = $UniverseApi->getUniverseStationsStationId($this->corpDetails['homeStationId'], $EdkEsi->getDataSource());
+            $this->corpDetails['headQuartersName'] = $UniverseDetails->getName();
             $this->corpDetails['memberCount'] = $EsiCorp->getMemberCount();
             // FIXME not provided by ESI!
             $this->corpDetails['shareCount'] = $EsiCorp->getShares();
@@ -642,7 +647,7 @@ class pCorpDetail extends pageAssembly
                     $counter++;
                 }
                 $smarty->assignByRef('syslist', $syslist);
-                $smarty->assign('monthly_stats', $smarty->fetch(get_tpl(violent_systems)));
+                $smarty->assign('monthly_stats', $smarty->fetch(get_tpl('violent_systems')));
 
                 $sql = "select sys.sys_name, sys.sys_id, sys.sys_sec, count(kll.kll_id) as kills
                             from kb3_systems sys, kb3_kills kll, kb3_inv_crp inc
@@ -682,7 +687,7 @@ class pCorpDetail extends pageAssembly
                     $counter++;
                 }
                 $smarty->assignByRef('syslist', $syslist);
-                $smarty->assign('total_stats', $smarty->fetch(get_tpl(violent_systems)));
+                $smarty->assign('total_stats', $smarty->fetch(get_tpl('violent_systems')));
                 return $smarty->fetch(get_tpl('detail_kl_monthly'));
                 break;
         }

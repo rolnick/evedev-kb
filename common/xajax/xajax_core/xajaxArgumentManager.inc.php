@@ -371,9 +371,10 @@ class xajaxArgumentManager
             $this->nMethod = XAJAX_METHOD_GET;
             $this->aArgs = $_GET['xjxargs'];
         }
-        
-        if (1 == get_magic_quotes_gpc())
-            array_walk($this->aArgs, array(&$this, 'argumentStripSlashes'));
+        if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+	        if (1 == get_magic_quotes_gpc())
+        	array_walk($this->aArgs, array(&$this, 'argumentStripSlashes'));
+		    }
         
         array_walk($this->aArgs, array(&$this, 'argumentDecodeXML'));
     }

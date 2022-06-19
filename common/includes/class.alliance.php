@@ -6,6 +6,7 @@
  * @package EDK
  */
 
+
 use EsiClient\AllianceApi;
 use EDK\ESI\ESI;
 use Swagger\Client\ApiException;
@@ -35,11 +36,11 @@ class Alliance extends Entity
      * @param boolean $external set true if the given id is external
      */
     function __construct($id = 0, $external = false)
-    {
+    {   
         if ($external) {
             $this->externalid = (int) $id;
         } else {
-            $this->id = (int) $id;
+            $this->id = $id;
         }
     }
 
@@ -53,16 +54,14 @@ class Alliance extends Entity
         if ($this->externalid) {
             return $this->externalid;
         }
-
         $this->execQuery();
 
         if ($this->externalid) {
             return $this->externalid;
         }
         // If we still don't have an external ID then try to fetch it from CCP.
-        try
-        {
-            $this->setExternalID(ESI_Helpers::getExternalIdForEntity($this->getName(), 'alliance'));
+        try {
+	        $this->setExternalID(ESI_Helpers::getExternalIdForEntity($this->getName(), 'alliance'));
         } 
         
         catch (ApiException $e) 
@@ -157,7 +156,6 @@ class Alliance extends Entity
                         EDKError::log(ESI::getApiExceptionReason($e) . PHP_EOL . $e->getTraceAsString());
                     }
                 } 
-                
                 else if ($qry->recordCount()) {
                     $row = $qry->getRow();
                     $this->id = (int) $row['all_id'];

@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+
 /**
  * $Date$
  * $Revision$
@@ -820,7 +823,7 @@ class pAllianceDetail extends pageAssembly
                 }
                 $smarty->assignByRef('syslist', $syslist);
                 $smarty->assign('monthly_stats',
-                        $smarty->fetch(get_tpl(violent_systems)));
+                        $smarty->fetch(get_tpl('violent_systems')));
 
                 $sql = "select sys.sys_name, sys.sys_id, sys.sys_sec, count(kll.kll_id) as kills
                             from kb3_systems sys, kb3_kills kll, kb3_inv_all ina
@@ -857,7 +860,7 @@ class pAllianceDetail extends pageAssembly
                 }
                 $smarty->assignByRef('syslist', $syslist);
                 $smarty->assign('total_stats',
-                        $smarty->fetch(get_tpl(violent_systems)));
+                        $smarty->fetch(get_tpl('violent_systems')));
                 return $smarty->fetch(get_tpl('detail_kl_monthly'));
 
                 break;
@@ -901,7 +904,9 @@ class pAllianceDetail extends pageAssembly
         $metaTagDescription = $this->alliance->getName();
         if($this->allianceDetails)
         {
-            $metaTagDescription .= " [" . $this->allianceDetails['shortName'] . "] (" . $this->allianceDetails['memberCount'] . " Members in " . count($this->allianceDetails['memberCorps']) . " Corps)";
+	    if(isset($this->allianceDetails['memberCorps'])) {
+	        $metaTagDescription .= " [" . $this->allianceDetails['shortName'] . "] (" . $this->allianceDetails['memberCount'] . " Members in " . count($this->allianceDetails['memberCorps']) . " Corps)";
+	    }
         }
         $metaTagDescription .= " has " . $this->kill_summary->getTotalKills() . " kills and " . $this->kill_summary->getTotalLosses() . " losses (Efficiency: ".$this->efficiency."%) at " . config::get('cfg_kbtitle');
 

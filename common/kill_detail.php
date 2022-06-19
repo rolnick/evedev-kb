@@ -913,7 +913,7 @@ class pKillDetail extends pageAssembly
 						."/?a=system_detail&amp;sys_id="
 						.$this->kill->getSystem()->getID());
 				$smarty->assign('systemSecurity',
-						$this->kill->getSystem()->getSecurity(true));
+						$this->kill->getSystem()->getSecurity(true, true));
                                 $smarty->assign('nearestCelestialName', $this->kill->getNearestCelestialName());
                                 $smarty->assign('distanceToNearestCelestial', $this->kill->getDistanceToNearestCelestialFormatted());
             } else {
@@ -929,7 +929,7 @@ class pKillDetail extends pageAssembly
                     array('a', 'system_detail', true),
                     array('sys_id', $this->kill->getSystem()->getID(), true)));
             $smarty->assign('systemSecurity',
-                    $this->kill->getSystem()->getSecurity(true));
+                    $this->kill->getSystem()->getSecurity(true, true));
                         $smarty->assign('nearestCelestialName', $this->kill->getNearestCelestialName());
                         $smarty->assign('distanceToNearestCelestial', $this->kill->getDistanceToNearestCelestialFormatted());
         }

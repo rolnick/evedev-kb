@@ -205,12 +205,12 @@ class DBCachedQuery extends DBBaseQuery
     public static function markAffectedTables($sql = null)
     {
         if(is_null($sql)) return true;
-        // this function invalidates cache files for touched tables
+	// this function invalidates cache files for touched tables
         $text = trim(strtolower($sql));
         $text = str_replace(array('ignore','`', "\r\n", "\n"), '', $text);
         $text = str_replace('(', ' (', $text);
         $ta = preg_split('/\s/', $text, 0, PREG_SPLIT_NO_EMPTY);
-
+	
         // check for sql keywords and get the table from the appropriate position
         $tables = array();
         if ($ta[0] == 'update')
@@ -229,6 +229,10 @@ class DBCachedQuery extends DBBaseQuery
         {
             $tables[] = $ta[2];
         }elseif ($ta[0] == 'drop')
+        {
+            $tables[] = $ta[2];
+        }
+	elseif ($ta[0] == 'select')
         {
             $tables[] = $ta[2];
         }

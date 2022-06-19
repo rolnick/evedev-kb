@@ -1,0 +1,84 @@
+div#kl-detail-ssocomment-list {
+display: table;
+}
+
+div.ssocomment-posted {
+margin-bottom: 10px;
+}
+
+div.ssocomment-avatar {
+float: left;
+padding-right: 1px;
+}
+
+div.ssocomment-text {
+display: table-cell;
+border-left: .5px solid rgba(255, 255, 255, .3);
+padding-left: 5px;
+}
+
+
+div.statscontainer {
+display: table;
+width: 100%;
+}
+
+div.statstable {
+display: table-cell;
+}
+
+div.leftstats {
+padding: 6px 10px 0 0;
+}
+
+div.middlestats {
+padding: 6px 5px 0 5px;
+}
+
+div.rightstats {
+padding: 6px 0 0 10px;
+}
+
+.kb-stats-table {
+text-align: left;
+width: 100%;
+}
+
+th.n_kills, td.n_kills {
+text-align: right;
+}
+
+.s10 {color: #2FEFEF}
+.s09 {color: #48F0C0}
+.s08 {color: #00EF47}
+.s07 {color: #00F000}
+.s06 {color: #8FEF2F}
+.s05 {color: #EFEF00}
+.s04 {color: #D77700}
+.s03 {color: #F06000}
+.s02 {color: #F04800}
+.s01 {color: #D73000}
+.s00, .s0 {color: #F00000}
+
+#versusstats {
+/*margin: 0 auto;*/
+}
+
+#versusstats th, #versusstats td {
+vertical-align: middle;
+padding: 2px 10px;
+}
+
+.versus-left {
+text-align: right;
+width: 250px;
+}
+
+.versus-middle {
+text-align: center;
+}
+
+.versus-right {
+text-align: left;
+width: 250px;
+}

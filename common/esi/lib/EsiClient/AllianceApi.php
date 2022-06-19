@@ -131,7 +131,7 @@ class AllianceApi
     public function getAlliancesWithHttpInfo($datasource = null, $if_none_match = null)
     {
         // parse inputs
-        $resourcePath = "/v1/alliances/";
+        $resourcePath = "/v2/alliances/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -169,7 +169,7 @@ class AllianceApi
                 $httpBody,
                 $headerParams,
                 'int[]',
-                '/v1/alliances/'
+                '/v2/alliances/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, 'int[]', $httpHeader), $statusCode, $httpHeader);
@@ -245,6 +245,7 @@ class AllianceApi
 
         // parse inputs
         $resourcePath = "/v3/alliances/{alliance_id}/";
+
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -369,7 +370,7 @@ class AllianceApi
         }
 
         // parse inputs
-        $resourcePath = "/v1/alliances/{alliance_id}/corporations/";
+        $resourcePath = "/v2/alliances/{alliance_id}/corporations/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -415,7 +416,7 @@ class AllianceApi
                 $httpBody,
                 $headerParams,
                 'int[]',
-                '/v1/alliances/{alliance_id}/corporations/'
+                '/v3/alliances/{alliance_id}/corporations/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, 'int[]', $httpHeader), $statusCode, $httpHeader);
@@ -490,7 +491,7 @@ class AllianceApi
         }
 
         // parse inputs
-        $resourcePath = "/v1/alliances/{alliance_id}/icons/";
+        $resourcePath = "/v3/alliances/{alliance_id}/icons/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -536,7 +537,7 @@ class AllianceApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\GetAlliancesAllianceIdIconsOk',
-                '/v1/alliances/{alliance_id}/icons/'
+                '/v3/alliances/{alliance_id}/icons/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetAlliancesAllianceIdIconsOk', $httpHeader), $statusCode, $httpHeader);

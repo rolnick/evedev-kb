@@ -654,6 +654,7 @@ class Kill extends Cacheable
             if (!$pilot->getName()) {
                 throw new KillException("Invalid mail, invalid involved pilot (ID: ".$pilot->getID().")");
             } else if (!$corp->getName()) {
+	    #	echo "ID: " . $corp->getID();
                 throw new KillException("Invalid mail, invalid involved corporation (ID: ".$corp->getID().")");
             } else if (!$alliance->getName()) {
                 throw new KillException("Invalid mail, invalid involved alliance (ID: ".$alliance->getID().")");

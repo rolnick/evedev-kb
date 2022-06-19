@@ -258,7 +258,11 @@ class KillSummaryTable
                     $this->tkisk += $row['killisk'];
                     $this->tlcount += $row['losscount'];
                     $this->tlisk += $row['lossisk'];
-                    if(!in_array($key, array(2,3,11) )) $this->trkcount += $row['killcount'];
+                    if(!in_array($key, array(2,3,11) )) {
+						if (isset($this->trkcount)) {
+							$this->trkcount += $row['killcount'];
+						}
+					}
                 }
                 return;
             }
@@ -584,7 +588,9 @@ class KillSummaryTable
             }
         }
         $qrystring = edkURI::build($args);
-        $clearfilter = $qrystring;
+	if(isset($qrystring)) {
+            $clearfilter = $qrystring;
+	}
         if(strpos($qrystring, '?') === false) {
             $qrystring .= "?";
         } else {
@@ -632,7 +638,9 @@ class KillSummaryTable
         }
 
         if (edkURI::getArg('scl_id')){
-            $smarty->assign('clearfilter',$clearfilter);
+			if (isset($clearfilter)) {
+	            $smarty->assign('clearfilter',$clearfilter);
+			}
         }
 
         $this->html = $smarty->fetch(get_tpl('summarytable'));

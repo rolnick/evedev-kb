@@ -349,4 +349,5 @@ class xajaxIncludeClientScriptPlugin extends xajaxRequestPlugin
     Register the xajaxIncludeClientScriptPlugin object with the xajaxPluginManager.
 */
 $objPluginManager =& xajaxPluginManager::getInstance();
-$objPluginManager->registerPlugin(new xajaxIncludeClientScriptPlugin(), 99);
+$xajaxIncludeC = new xajaxIncludeClientScriptPlugin();
+$objPluginManager->registerPlugin($xajaxIncludeC, $b = 99);

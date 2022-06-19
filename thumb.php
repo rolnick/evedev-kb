@@ -61,10 +61,10 @@ else
     else $id = @intval($_GET['id']);
 }
 
-$imghost = "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+$imghost = "https://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 $imghost = substr($imghost, 0, strrpos($imghost, '/', 1)).'/';
 
-if(preg_match("/[^\w\d-_]/", $type))
+if(preg_match("/[^\w\d\-_]/", $type))
 {
     header("Location: {$imghost}img/portrait_0_{$size}.jpg");
     die;
@@ -183,7 +183,6 @@ function goType($type, $id, $size = 64, $imghost = "")
         else header("Location: {$imghost}img/portrait_0_64.jpg");
         die;
     }
-
     define('KB_CACHEDIR', 'cache');
     require_once("common/includes/class.cachehandler.php");
 
@@ -205,7 +204,7 @@ function goType($type, $id, $size = 64, $imghost = "")
     {
         if(CacheHandler::exists("{$id}_64.png", "img"))
                 $img = imagecreatefrompng(CacheHandler::getInternal("{$id}_64.png", "img"));
-        else $img = fetchImage($id, "InventoryType", 64, "png");
+        else $img = fetchImage($id, "Type", 64, "png");
         if($img && $size != 64)
                 resize($size, 64, $img, CacheHandler::getInternal("{$id}_{$size}.png", "img"));
     }
@@ -214,11 +213,10 @@ function goType($type, $id, $size = 64, $imghost = "")
     {
         if(CacheHandler::exists("{$id}_32.png", "img"))
                 $img = imagecreatefrompng(CacheHandler::getInternal("{$id}_32.png", "img"));
-        else $img = fetchImage($id, "InventoryType", 32, "png");
+        else $img = fetchImage($id, "Type", 32, "png");
         if($img && $size != 32)
                 resize($size, 32, $img, CacheHandler::getInternal("{$id}_{$size}.png", "img"));
     }
-
     if(!$img) show404();
 
     expiryHeaders("png", CacheHandler::getInternal("{$id}_{$size}.png", "img"));
@@ -265,11 +263,12 @@ function show404()
 
 function fetchImage($id, $type = 'Character', $size = 128, $ext = "jpg")
 {
+	define('IMG_SERVER', "https://imageserver.eveonline.com");
     include_once('kbconfig.php');
-    require_once('common/includes/globals.php');
+    //require_once('common/includes/globals.php');
     require_once("common/includes/class.cachehandler.php");
-
-    $url = IMG_SERVER."/".$type."/".$id."_".$size.".".$ext;
+   
+  	$url = IMG_SERVER."/".$type."/".$id."_".$size.".".$ext;
     if(function_exists('curl_init'))
     {
         // in case of a dead eve server we only want to wait 2 seconds

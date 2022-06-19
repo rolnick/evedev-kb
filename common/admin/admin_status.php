@@ -17,7 +17,7 @@ $html = "<h2>Config Settings</h2>";
 $html .= "<table>";
 while($row = $qry->getRow())
 {
-    $html .= "<tr><td>".implode($row, '</td><td>')."</td></tr>";
+    $html .= "<tr><td>".implode('</td><td>', $row)."</td></tr>";
 }
 $html .= "</table>";
 
@@ -31,7 +31,7 @@ while($row = $qry->getRow())
     $qry2->execute('SHOW INDEXES FROM '.implode($row));
     while($row2 = $qry2->getRow())
     {
-        $html .= "<tr><td>".implode($row2, '</td><td>')."</td></tr>";
+        $html .= "<tr><td>".implode('</td><td>', $row)."</td></tr>";
     }
 }
     $html .= "</table>";

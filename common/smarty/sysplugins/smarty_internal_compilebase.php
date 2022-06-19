@@ -49,7 +49,8 @@ class Smarty_Internal_CompileBase {
                 } 
                 // named attribute
             } else {
-                $kv = each($mixed); 
+	    	foreach ($mixed as $k => $v) {
+                $kv = [$k, $v]; 
                 // option flag?
                 if (in_array($kv['key'], $this->option_flags)) {
                     if (is_bool($kv['value'])) {
@@ -74,6 +75,7 @@ class Smarty_Internal_CompileBase {
                     reset($mixed);
                     $_indexed_attr[key($mixed)] = $mixed[key($mixed)];
                 } 
+		}
             } 
         } 
         // check if all required attributes present

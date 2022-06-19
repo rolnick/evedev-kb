@@ -245,9 +245,12 @@ class ObjectSerializer
         } elseif (strcasecmp(substr($class, -2), '[]') == 0) {
             $subClass = substr($class, 0, -2);
             $values = array();
-            foreach ($data as $key => $value) {
-                $values[] = self::deserialize($value, $subClass, null, $discriminator);
-            }
+	   # if (is_array($data) || is_object($data)) {
+	            foreach ($data as $key => $value) {
+        	        $values[] = self::deserialize($value, $subClass, null, $discriminator);
+            	
+	#	}
+	    }
             return $values;
         } elseif ($class === 'object') {
             settype($data, 'array');

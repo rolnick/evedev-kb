@@ -603,7 +603,7 @@ class update
         if (!class_exists('DOMDocument')) {
             return "The required PHP DOMDocument libraries are not installed.";
         }
-        update::checkStatus();
+ #       update::checkStatus();
         if (isNewerVersion(update::$codeVersion, KB_VERSION)) {
             return "<div>Code updates are available, <a href='"
                     .edkURI::page('admin_upgrade')."'>here</a></div><br/>";
@@ -621,7 +621,7 @@ class update
         if (!class_exists('DOMDocument')) {
             return "The required PHP DOMDocument libraries are not installed.";
         }
-        update::checkStatus();
+#        update::checkStatus();
         if (update::$dbVersion > Config::get('upd_dbVersion')) {
             return "<div>Database updates are available, <a href='"
                     .edkURI::page('admin_upgrade')."'>here</a></div><br/>";

@@ -68,6 +68,7 @@ function getESIApi(&$fetchConfig)
 
     catch (Exception $ex) 
     {
+    echo $ex;
         logCron("Error processing ESI API for ".$Pilot->getName()." (type: ".$fetchConfig->getKeyType().")");
         logCron($ex->getMessage());
     }

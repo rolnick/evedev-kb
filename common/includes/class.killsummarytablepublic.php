@@ -172,7 +172,9 @@ class KillSummaryTablePublic extends KillSummaryTable
         }
 
         if (edkURI::getArg('scl_id')) {
-            $smarty->assign('clearfilter', $clearfilter);
+			if(isset($clearfilter)) {
+	            $smarty->assign('clearfilter', $clearfilter);
+			}
         }
 
         $html .= $smarty->fetch(get_tpl('summarytable'));

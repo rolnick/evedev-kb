@@ -310,7 +310,9 @@ class TopList_Base
             || $this->inv_crp && $this->inv_all) $this->mixedinvolved = true;
         if ($this->vic_plt && $this->vic_crp || $this->vic_plt && $this->vic_all
             || $this->vic_crp && $this->vic_all) $this->mixedvictims = true;
-        $this->sql_ .= $this->sqltop_;
+		if (isset($this->sqltop_)) {
+       		$this->sql_ .= $this->sqltop_;
+		}
         // involved
         if(!$this->mixedinvolved)
         {
@@ -445,7 +447,7 @@ class TopList_Base
 
         if (count($this->systems_))
         {
-            $this->sql_ .= $op." kll.kll_system_id IN ( ".implode($this->systems_, ",").") ";
+            $this->sql_ .= $op." kll.kll_system_id IN ( ".implode(",", $this->systems_).") ";
             $op = " AND ";
         }
 

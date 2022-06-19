@@ -131,7 +131,7 @@ class StatusApi
     public function getStatusWithHttpInfo($datasource = null, $if_none_match = null)
     {
         // parse inputs
-        $resourcePath = "/v1/status/";
+        $resourcePath = "/v2/status/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -169,7 +169,7 @@ class StatusApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\GetStatusOk',
-                '/v1/status/'
+                '/v2/status/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetStatusOk', $httpHeader), $statusCode, $httpHeader);

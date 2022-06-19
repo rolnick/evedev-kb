@@ -99,7 +99,7 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
         'race_id' => 'race_id',
         'reprocessing_efficiency' => 'reprocessing_efficiency',
         'reprocessing_stations_take' => 'reprocessing_stations_take',
-        'services' => 'services',
+      //  'services' => 'services',
         'station_id' => 'station_id',
         'system_id' => 'system_id',
         'type_id' => 'type_id'

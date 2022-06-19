@@ -146,7 +146,7 @@ class KillList
 
             // System filter
             if (count($this->systems_))
-                $sql .= " AND kll.kll_system_id in ( ".implode($this->systems_, ",").")";
+                $sql .= " AND kll.kll_system_id in ( ".implode(",", $this->systems_).")";
 
             // Get all kills after given kill id (used for feed syndication)
             if ($this->minkllid_)
@@ -220,7 +220,7 @@ class KillList
 
             // System filter
             if (count($this->systems_))
-                $sql .= " AND kll.kll_system_id in ( ".implode($this->systems_, ",").")";
+                $sql .= " AND kll.kll_system_id in ( ".implode(",", $this->systems_).")";
 
             // Get all kills after given kill id (used for feed syndication)
             if ($this->minkllid_)
@@ -436,7 +436,7 @@ class KillList
 
                 // System filter
                 if (count($this->systems_))
-                    $this->sql_ .= " AND kll.kll_system_id in ( ".implode($this->systems_, ",").")";
+                    $this->sql_ .= " AND kll.kll_system_id in ( ".implode(",", $this->systems_).")";
                                 // Location filter
                                 if (count($this->locations_))
                                         $this->sql_ .= " AND kll.kll_location in ( ".implode($this->locations_, ",").")";
@@ -521,7 +521,7 @@ class KillList
                 // System filter
                 if (count($this->systems_))
                 {
-                    $this->sql_ .= $sqlwhereop." kll.kll_system_id in ( ".implode($this->systems_, ",").")";
+                    $this->sql_ .= $sqlwhereop." kll.kll_system_id in ( ".implode(",", $this->systems_).")";
                     $sqlwhereop = ' AND ';
                 }
 

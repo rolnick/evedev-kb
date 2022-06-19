@@ -45,9 +45,9 @@ class edk_xajax
     public static function lateProcess()
     {
         // let all mods know we're here so they can register their functions
-        event::call('xajax_initialised', get_class());
+       # event::call('xajax_initialised', get_class());
         // Also register this for old mods registered to the ajax mod.
-        event::call('mod_xajax_initialised', get_class());
+       # event::call('mod_xajax_initialised', get_class());
 
         // now process all xajax calls
         global $xajax;

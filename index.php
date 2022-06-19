@@ -8,8 +8,9 @@
 // Enable custom error handling.
 require_once ('common/includes/class.edkerror.php');
 
-set_error_handler(array('EDKError', 'handler'), E_ALL & ~(E_STRICT | E_NOTICE | E_USER_NOTICE) );
-@error_reporting(E_ALL & ~(E_STRICT | E_NOTICE | E_USER_NOTICE));
+#set_error_handler(array('EDKError', 'handler'), E_ALL & ~(E_STRICT | E_NOTICE | E_USER_NOTICE | E_ERROR) );
+#@error_reporting(E_ALL & ~(E_STRICT | E_NOTICE | E_USER_NOTICE | E_ERROR));
+error_reporting(E_ERROR | E_PARSE);
 date_default_timezone_set("UTC");
 
 // Set up include paths.

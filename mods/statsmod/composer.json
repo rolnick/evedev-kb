@@ -1,0 +1,7 @@
+{
+    "require": {
+        "evelabs/oauth2-eveonline": "^1.1",
+        "ircmaxell/random-lib": "^1.2",
+        "phpseclib/mcrypt_compat": "^1.0"
+    }
+}

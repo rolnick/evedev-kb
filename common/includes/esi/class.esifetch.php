@@ -372,7 +372,6 @@ class ESIFetch extends ESISSO
         // set external ID
         $Kill->setExternalID($id);
         $Kill->setCrestHash(strval($hash));
-
         $EsiParser = new \EsiParser($Kill->getExternalID(), $Kill->getCrestHash());
         $EsiParser->setAllowNpcOnlyKills(!$this->ignoreNPCOnly);
         try

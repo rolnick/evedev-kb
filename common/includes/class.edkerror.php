@@ -47,7 +47,7 @@ class EDKError
         }
         $output .= "Error on line $errline in file $errfile<br />\n";
         $output .= "PHP " . PHP_VERSION . " (" . PHP_OS . "), ";
-        $output .= "EDK " . KB_VERSION . " " . KB_RELEASE . "<br />\n";
+ //       $output .= "EDK " . $KB_VERSION . " " . $KB_RELEASE . "<br />\n";
 
         $trace = debug_backtrace();
         foreach($trace as $row)

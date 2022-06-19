@@ -89,7 +89,9 @@ header('Content-Type: text/html; charset=UTF-8');
 //edkloader::setRoot(getcwd());
 
 // smarty doesnt like it
-if(get_magic_quotes_runtime()) @set_magic_quotes_runtime(0);
+if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+	if(get_magic_quotes_runtime()) @set_magic_quotes_runtime(0);
+}
 
 // load the config from the database
 $config = new Config();

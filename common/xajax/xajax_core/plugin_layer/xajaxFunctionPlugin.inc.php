@@ -228,4 +228,5 @@ class xajaxFunctionPlugin extends xajaxRequestPlugin
 }
 
 $objPluginManager =& xajaxPluginManager::getInstance();
-$objPluginManager->registerPlugin(new xajaxFunctionPlugin(), 100);
+$xajaxFunction = new xajaxFunctionPlugin();
+$objPluginManager->registerPlugin($xajaxFunction, $b = 100);

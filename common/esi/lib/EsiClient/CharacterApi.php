@@ -141,7 +141,7 @@ class CharacterApi
         }
 
         // parse inputs
-        $resourcePath = "/v4/characters/{character_id}/";
+        $resourcePath = "/v5/characters/{character_id}/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -187,7 +187,7 @@ class CharacterApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\GetCharactersCharacterIdOk',
-                '/v4/characters/{character_id}/'
+                '/v5/characters/{character_id}/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdOk', $httpHeader), $statusCode, $httpHeader);
@@ -2030,7 +2030,7 @@ class CharacterApi
             throw new \InvalidArgumentException('Missing the required parameter $characters when calling postCharactersCharacterIdCspa');
         }
         // parse inputs
-        $resourcePath = "/v4/characters/{character_id}/cspa/";
+        $resourcePath = "/v5/characters/{character_id}/cspa/";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -2085,7 +2085,7 @@ class CharacterApi
                 $httpBody,
                 $headerParams,
                 'float',
-                '/v4/characters/{character_id}/cspa/'
+                '/v5/characters/{character_id}/cspa/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, 'float', $httpHeader), $statusCode, $httpHeader);
